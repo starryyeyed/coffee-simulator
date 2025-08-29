@@ -9,13 +9,17 @@
     {% if orders %}
         <ul>
         {% for order in orders %}
-            <li>{{ order.item_name }} - {{ order.price }}</li>
+            <li>
+                Item: {{ order.item_name }}<br>
+                From: {{ order.sender_name }} to {{ order.recipient_name }}<br>
+                Message: {{ order.message }}
+            </li>
         {% endfor %}
         </ul>
     {% else %}
         <p>No orders have been placed yet.</p>
     {% endif %}
 
-    <a href="/">Back to Cafe</a>
+    <a href="/">Go Back to Cafe!</a>
 </body>
 </html>
