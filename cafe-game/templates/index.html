@@ -8,26 +8,29 @@
     </head>
 </head>
 <body>
-    <h1>Welcome to the Coffee Simulator</h1>
-    <p>Follow the steps to make your perfect cup of coffee with a customized message!</p>
+    <div class="popout-container">
+        <h1>Welcome to the Coffee Simulator</h1>
+        <p>Follow the steps to make your perfect cup of coffee with a customized message!</p>
+        <canvas id="gameCanvas" width="400" height="300"></canvas>
 
-    <div class="controls-container"></div>
-        <form action="/place-order" method="POST">
-            <h2>Place a New Order</h2>
-            <label for="item_name">Item Name:</label><br>
-            <input type="text" id="item_name" name="item_name" required><br>
-            <label for="sender_name">Sender Name:</label><br>
-            <input type="text" id="sender_name" name="sender_name" required><br>
-            <label for="recipient_name">Recipient Name:</label><br>
-            <input type="text" id="recipient_name" name="recipient_name" required><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br>
-            <input type="submit" value="Place Order">
-        </form>
-        <a href="/orders">View Previous Orders</a>
+        <div class="controls-container"></div>
+            <form action="/place-order" method="POST">
+                <h2>Place a New Order</h2>
+                <label for="item_name">Item Name:</label><br>
+                <input type="text" id="item_name" name="item_name" required><br>
+                <label for="sender_name">Sender Name:</label><br>
+                <input type="text" id="sender_name" name="sender_name" required><br>
+                <label for="recipient_name">Recipient Name:</label><br>
+                <input type="text" id="recipient_name" name="recipient_name" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <input type="submit" value="Place Order">
+            </form>
 
-        <script src="script.js"></script>
+            <a href="/orders">View Previous Orders</a>
+
+            <script src="script.js"></script>
+        </div>
     </div>
-
 </body>
 </html>

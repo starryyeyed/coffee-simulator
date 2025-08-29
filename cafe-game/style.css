@@ -1,0 +1,21 @@
+.popout-container {
+    /* fixed position on the screen */
+    position: fixed; 
+    top: 50%; /* element's position from top edges */
+    left: 50%; /* element's position from left edges */
+    transform: translate(-50%, -50%); /* centers the pop-out on the screen regardless of screen size */
+
+    /* fixed dimensions */
+    width: 400px;
+    height: 300px;
+
+    /* styling */
+    border: 10px solid #69503e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff; /* bg color */
+
+    background-image: url("library_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
