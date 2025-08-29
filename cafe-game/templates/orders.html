@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Previous Orders</title>
+</head>
+<body>
+    <h1>Previous Orders</h1>
+    {% if orders %}
+        <ul>
+        {% for order in orders %}
+            <li>{{ order.item_name }} - {{ order.price }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No orders have been placed yet.</p>
+    {% endif %}
+
+    <a href="/">Back to Cafe</a>
+</body>
+</html>

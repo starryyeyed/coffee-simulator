@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
         <meta charset="UTF-8" /> <!-- specifies character incoding -->
@@ -9,19 +10,6 @@
 <body>
     <h1>Welcome to the Coffee Simulator</h1>
     <p>Follow the steps to make your perfect cup of coffee with a customized message!</p>
-    <button onclick="placeOrder('Coffee')">Order Coffee</button>
-    <script>
-        function placeOrder(item) {
-            fetch ('order', {
-                method: 'POST',
-                headers: {
-                    'Content-Type' : 'application/json',
-                },
-                body: JSON.stringify({ item: item, time: new Date() })
-            })
-            .then(response => response.json())
-            .then(data => console.log('Order sent to server:', data))
-        }
-    </script>
+    <a href="/orders">View Previous Orders</a>
 </body>
 </html>
