@@ -1,7 +1,18 @@
+.orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px; /* adjusts horizontal spacing btwn images */
+    row-gap: 100px; /* adjusts vertical spacing between the images */
+    padding: 10px;
+}
+
 .display-container {
     position: relative;
-    width: 600px; /* adjusts to the width of image */
+    width: 250px; /* adjusts to the width of image */
     margin: 0 auto; /* centers the container */
+    overflow-wrap: break-word; /* wraps word */
+    
 }
 
 .display-image {
@@ -16,9 +27,11 @@
 .order-overlay {
     position: relative;
     z-index: 2;
-    padding: 20px;
-    top: 20px;   /* Adjust these values to position the text exactly where you want */
-    left: 20px;
+    padding: 10px;
+    top: 70px;   /* Adjust these values to position the text exactly where you want */
+    left: 5px;
+    float: left;
+    margin-right: 30px;
     color: #000; /* Set text color */
     font-family: monospace; /* sets digital font */
 }
