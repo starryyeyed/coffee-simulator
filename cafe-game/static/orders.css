@@ -1,3 +1,23 @@
+.display-container {
+    position: relative;
+    width: 600px; /* adjusts to the width of image */
+    margin: 0 auto; /* centers the container */
+}
+
+.display-image {
+    width: 100%;
+    height: auto;
+}
+
+.order-overlay {
+    position: absolute;
+    top: 20px;   /* Adjust these values to position the text exactly where you want */
+    left: 20px;
+    color: #000; /* Set text color */
+    font-family: monospace; /* sets digital font */
+}
+
+
 body {
     background-image: url("library_bg.jpg");
     background-size: cover;

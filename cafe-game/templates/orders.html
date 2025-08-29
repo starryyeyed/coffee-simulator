@@ -6,19 +6,24 @@
 </head>
 <body>
     <h1>Previous Orders</h1>
-    {% if orders %}
-        <ul>
-        {% for order in orders %}
-            <li>
-                Item: {{ order.item_name }}<br>
-                From: {{ order.sender_name }} to {{ order.recipient_name }}<br>
-                Message: {{ order.message }}
-            </li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No orders have been placed yet.</p>
-    {% endif %}
+    <div class = "display-container">
+        <img src="{{url_for('static', filename='coffee_notes.png')}}" alt="Coffee Notes" class="display-image">
+        <div class="order-overlay">
+            {% if orders %}
+                <ul>
+                {% for order in orders %}
+                    <li>
+                        <b>Item:</b> {{ order.item_name }}<br>
+                        <b></b>From:</b> {{ order.sender_name }} to {{ order.recipient_name }}<br>
+                        <b>Message:</b> {{ order.message }}
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No orders have been placed yet.</p>
+            {% endif %}
+        </div>
+    </div>
 
     <a href="/">Go Back to Cafe!</a>
 </body>
