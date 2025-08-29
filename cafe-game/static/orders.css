@@ -28,10 +28,10 @@
     position: relative;
     z-index: 2;
     padding: 10px;
-    top: 70px;   /* Adjust these values to position the text exactly where you want */
+    top: 67px;   /* top margin of text */
     left: 5px;
     float: left;
-    margin-right: 30px;
+    margin-right: 35px;
     color: #000; /* Set text color */
     font-family: monospace; /* sets digital font */
 }
