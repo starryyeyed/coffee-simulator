@@ -5,12 +5,18 @@
 }
 
 .display-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: auto;
+    z-index: 1; /* used to overlay images to correct position */
 }
 
 .order-overlay {
-    position: absolute;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
     top: 20px;   /* Adjust these values to position the text exactly where you want */
     left: 20px;
     color: #000; /* Set text color */
