@@ -36,6 +36,12 @@
     font-family: monospace; /* sets digital font */
 }
 
+.back-link {
+    display: block; /* link becomes block element */
+    margin-top: 60px; /* gives space */
+    text-align: center; /* centers link text */
+}
+
 
 body {
     background-image: url("library_bg.jpg");
