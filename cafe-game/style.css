@@ -1,18 +1,28 @@
+body {
+    background-color: #f5f5dc; /* light beige background */
+    font-family: monospace;
+    margin: 30;
+    padding: 30;
+    overflow: hidden; /* prevents main body from scrolling? */
+}
+
 .popout-container {
     /* fixed position on the screen */
     position: fixed; 
-    top: 50%; /* element's position from top edges */
-    left: 50%; /* element's position from left edges */
+    top: 50%; /* centers element's position from top edges */
+    left: 50%; /* centers element's position from left edges */
     transform: translate(-50%, -50%); /* centers the pop-out on the screen regardless of screen size */
 
     /* fixed dimensions */
-    width: 400px;
-    height: 300px;
+    width: 75vw;
+    height: 75vh;
 
     /* styling */
     border: 10px solid #69503e;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #fff; /* bg color */
+    padding: 20px;
+    overflow: auto; /* allows content to scroll if there's overflow */
 
     background-image: url("library_bg.jpg");
     background-size: cover;
