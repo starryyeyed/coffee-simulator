@@ -34,6 +34,9 @@ def place_order():
     return redirect(url_for('index'))
 
 @app.route('/start_game', methods=['POST'])
+def start_game():
+    # Add your game starting logic here
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)
