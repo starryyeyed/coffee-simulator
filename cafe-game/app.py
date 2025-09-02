@@ -13,8 +13,8 @@ def index():
     return render_template('index.html')
 
 # main route for starting screen
-@app.route('/start_game', methods=['POST'])
-def start_game():
+@app.route('/select_blend', methods=['POST'])
+def blend():
     return render_template('blend.html')
 
 # route that displays all previous orders

@@ -1,0 +1,49 @@
+/* removing default button appearance */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.image-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: relative;
+
+    /* removes default button styles */
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    
+    /* transitions for hover effects */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* styling the image inside the button */
+.image-button img {
+    width: 130px; /* set desired width */
+    height: 130px; /* set desired height */
+}
+
+.image-label {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* hover effect on button */
+.image-button:hover {
+    transform: scale(1.05);
+}
+
+.image-button:active {
+    transform: translateY(-2px);
+}

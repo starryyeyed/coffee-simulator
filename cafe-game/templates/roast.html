@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select a Roast!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='image_button_styles.css') }}">
 </head>
 <body>
     <h1>Select a Coffee Roast</h1>
-    <form action="/select_roast" method="POST">
-        <input type="hidden" name="bean_blend" value="{{ bean_blend }}">
-        <button type="submit" name="roast_type" value="Light">Light Roast</button>
-        <button type="submit" name="roast_type" value="Medium">Medium Roast</button>
-        <button type="submit" name="roast_type" value="Dark">Dark Roast</button>
+    <form action="/select_temperature" method="POST">
+        <div class="image-button">
+            <button type="submit" class="image-button" name="roast_type" value="Light">
+                <img src="{{ url_for('static', filename='light_roast.png') }}" alt="Light Roast">
+            </button>
+            <button type="submit" class="image-button" name="roast_type" value="Medium">
+                <img src="{{ url_for('static', filename='medium_roast.png') }}" alt="Medium Roast">
+            </button>
+            <button type="submit" class="image-button" name="roast_type" value="Dark">
+                <img src="{{ url_for('static', filename='dark_roast.png') }}" alt="Dark Roast">
+            </button>
+        </div>
     </form>
+    <a href="/">Back to Main Menu</a>
 </body>
 </html>

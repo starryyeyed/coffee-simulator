@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select a Blend!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='image_button_styles.css') }}">
 </head>
 <body>
     <h1>Select a Coffee Blend</h1>
-    <form action="/select_blend" method="POST">
-        <div class="button-container">
-            <button type="submit" class="image_button" name="bean_blend" value="Arabica">
+    <form action="/select_roast" method="POST">
+        <div class="image-button">
+            <button type="submit" class="image-button" name="bean_blend" value="Arabica">
                 <img src="{{ url_for('static', filename='arabica.png') }}" alt="Arabica">
             </button>
-            <button type="submit" class="image_button" name="bean_blend" value="Robusta">
+            <button type="submit" class="image-button" name="bean_blend" value="Robusta">
                 <img src="{{ url_for('static', filename='robusta.png') }}" alt="Robusta">
             </button>
-            <button type="submit" class="image_button" name="bean_blend" value="Liberica">
+            <button type="submit" class="image-button" name="bean_blend" value="Liberica">
                 <img src="{{ url_for('static', filename='liberica.png') }}" alt="Liberica">
             </button>
         </div>
