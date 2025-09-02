@@ -33,5 +33,7 @@ def place_order():
     conn.close()
     return redirect(url_for('index'))
 
+@app.route('/start_game', methods=['POST'])
+
 if __name__ == '__main__':
     app.run(debug=True)
