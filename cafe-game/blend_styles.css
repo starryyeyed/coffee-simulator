@@ -1,0 +1,22 @@
+/* removing default button appearance */
+.image-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* styling the image inside the button */
+.image-button img {
+    width: 100px; /* set desired width */
+    height: auto; /* set desired height */
+    transition: transform 0.2s; /* smooth transition for hover effect */
+}
+
+/* hover effect on button */
+.image-button:hover {
+    transform: scale(1.05);
+}

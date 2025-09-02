@@ -12,10 +12,12 @@ def get_db_connection():
 def index():
     return render_template('index.html')
 
+# main route for starting screen
 @app.route('/start_game', methods=['POST'])
 def start_game():
     return render_template('blend.html')
 
+# route that displays all previous orders
 @app.route('/orders')
 def show_orders():
     conn = get_db_connection()
@@ -50,7 +52,7 @@ def final_prompt():
     add_ons = request.form.getlist('add_ons')
     
     drink_name=f"{temperature_type} {roast_type} {bean_blend} {add_ons}"
-    
+
     return render_template('message_prompt.html', drink_name=drink_name)
 
 # adding order to a database
