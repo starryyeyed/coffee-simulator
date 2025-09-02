@@ -10,10 +10,19 @@
 <body>
     <div class="popout-container">
         <h1>Welcome to the Coffee Simulator</h1>
-        <p>Follow the steps to make your perfect cup of coffee with a customized message!</p>
+        <p>Please select an option below!</p>
         <canvas id="gameCanvas" width="400" height="300"></canvas>
 
-        <div class="controls-container"></div>
+        <form action="/start_game" method="POST">
+            <button type="submit">Make a New Cup of Coffee</button>
+        </form>
+
+        <form action="/orders" method="GET">
+            <button type="submit">View Past Orders</button>
+        </form>
+</body>
+</html>
+        <!-- <div class="controls-container"></div>
             <form action="/place-order" method="POST">
                 <h2>Place a New Order</h2>
                 <label for="item_name">Item Name:</label><br>
