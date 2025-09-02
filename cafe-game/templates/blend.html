@@ -8,15 +8,18 @@
 <body>
     <h1>Select a Coffee Blend</h1>
     <form action="/select_blend" method="POST">
-        <button type="submit" name="bean_blend" value="Arabica">
-            <img src="/static/arabica.png" alt="Arabica" style="width:100px; height: 100px">
-        </button>
-        <button type="submit" name="bean_blend" value="Robusta">
-            <img src="/static/robusta.png" alt="Robusta" style="width:100px; height: 100px">
-        </button>
-        <button type="submit" name="bean_blend" value="Liberica">
-            <img src="/static/liberica.png" alt="Liberica" style="width:100px; height: 100px">
-        </button>
+        <div class="button-container">
+            <button type="submit" class="image_button" name="bean_blend" value="Arabica">
+                <img src="{{ url_for('static', filename='arabica.png') }}" alt="Arabica">
+            </button>
+            <button type="submit" class="image_button" name="bean_blend" value="Robusta">
+                <img src="{{ url_for('static', filename='robusta.png') }}" alt="Robusta">
+            </button>
+            <button type="submit" class="image_button" name="bean_blend" value="Liberica">
+                <img src="{{ url_for('static', filename='liberica.png') }}" alt="Liberica">
+            </button>
+        </div>
     </form>
+    <a href="/">Back to Main Menu</a>
 </body>
 </html>
