@@ -1,0 +1,99 @@
+body {
+    background-color: #f5f5dc; /* light beige background */
+    font-family: monospace;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 30;
+    padding: 30;
+    overflow: hidden; /* prevents main body from scrolling? */
+}
+
+h1 {
+    color: #443b35; /* coffee brown color */
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+.game-container {
+    background-color: #fffff0;
+    padding: 40px 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 70%;
+    width: 500px;
+    margin: 20px;
+}
+
+/* removing default button appearance */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.nav-button {
+    background-color: #efdbcd; /* saddle brown */
+    color: rgb(104, 83, 83);
+    border: 1px solid #333;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* for anchor tags */
+    display: inline-block; /* for anchor tags */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #d4b996; /* darker saddle brown */
+    transform: translateY(-2px);
+}
+
+
+.image-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: relative;
+
+    /* removes default button styles */
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    
+    /* transitions for hover effects */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* styling the image inside the button */
+.image-button img {
+    width: 130px; /* set desired width */
+    height: 130px; /* set desired height */
+}
+
+.image-label {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* hover effect on button */
+.image-button:hover {
+    transform: scale(1.05);
+}
+
+.image-button:active {
+    transform: translateY(-2px);
+}

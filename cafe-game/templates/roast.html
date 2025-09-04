@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select a Roast!</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='image_button_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <div class="game-container">
     <h1>Select a Coffee Roast</h1>
-    <form action="/select_temperature" method="POST">
-        <div class="image-button">
-            <button type="submit" class="image-button" name="roast_type" value="Light">
-                <img src="{{ url_for('static', filename='light_roast.png') }}" alt="Light Roast">
-            </button>
-            <button type="submit" class="image-button" name="roast_type" value="Medium">
-                <img src="{{ url_for('static', filename='medium_roast.png') }}" alt="Medium Roast">
-            </button>
-            <button type="submit" class="image-button" name="roast_type" value="Dark">
-                <img src="{{ url_for('static', filename='dark_roast.png') }}" alt="Dark Roast">
-            </button>
+        <form action="/select_temperature" method="POST">
+            <div class="image-button">
+                <button type="submit" class="image-button" name="roast_type" value="Light">
+                    <img src="{{ url_for('static', filename='light_roast.png') }}" alt="Light Roast">
+                </button>
+                <button type="submit" class="image-button" name="roast_type" value="Medium">
+                    <img src="{{ url_for('static', filename='medium_roast.png') }}" alt="Medium Roast">
+                </button>
+                <button type="submit" class="image-button" name="roast_type" value="Dark">
+                    <img src="{{ url_for('static', filename='dark_roast.png') }}" alt="Dark Roast">
+                </button>
+                </div>
+            </form>
         </div>
-    </form>
-    <a href="/">Back to Main Menu</a>
+        <a href="/">Back to Main Menu</a>
+    </div>
 </body>
 </html>
