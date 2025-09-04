@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Blend!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Select Temperature</h1>
+        <form action="/orders" method="POST">
+            <div class="image-button">
+                <button type="submit" class="image-button" name="" value="Hot">
+                    <img src="{{ url_for('static', filename='hot.png') }}" alt="Hot">
+                    <span class="image-label">Hot</span>
+            </button>
+            <button type="submit" class="image-button" name="temperature" value="Iced">
+                <img src="{{ url_for('static', filename='iced.png') }}" alt="Iced">
+                <span class="image-label">Iced</span>
+            </button>
+        </div>
+    </form>
+</body>
+    <div class="nav-button">  
+        <form action="/" method="GET">
+            <button type="submit">Back to Main Menu</button>
+        </form>
+    </div>
+</html>
