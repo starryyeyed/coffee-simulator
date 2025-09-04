@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select a Roast!</title>
+    <title>Select a Blend!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="game-container">
-    <h1>Select a Coffee Roast</h1>
+        <h1>Select a Coffee Roast</h1>
         <form action="/select_temperature" method="POST">
             <div class="image-button">
                 <button type="submit" class="image-button" name="roast_type" value="Light">
                     <img src="{{ url_for('static', filename='light_roast.png') }}" alt="Light Roast">
+                    <span class="image-label">Light Roast</span>
                 </button>
                 <button type="submit" class="image-button" name="roast_type" value="Medium">
                     <img src="{{ url_for('static', filename='medium_roast.png') }}" alt="Medium Roast">
+                    <span class="image-label">Medium Roast</span>
                 </button>
                 <button type="submit" class="image-button" name="roast_type" value="Dark">
                     <img src="{{ url_for('static', filename='dark_roast.png') }}" alt="Dark Roast">
+                    <span class="image-label">Dark Roast</span>
                 </button>
                 </div>
             </form>
         </div>
-        <a href="/">Back to Main Menu</a>
+        <div class="nav-button">
+            <form action="/" method="GET">
+            <button type="submit">Back to Main Menu</button>
+        </form>
+        </div>
     </div>
 </body>
 </html>

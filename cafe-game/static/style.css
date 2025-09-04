@@ -1,12 +1,13 @@
 body {
-    background-color: #f5f5dc; /* light beige background */
+    background-color: #f5dcdc; /* light pink background */
     font-family: monospace;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 30;
     padding: 30;
-    overflow: hidden; /* prevents main body from scrolling? */
 }
 
 h1 {
@@ -18,12 +19,13 @@ h1 {
 
 
 .game-container {
-    background-color: #fffff0;
+    justify-content: center;
+    background-color: #fff0f0;
     padding: 40px 60px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 70%;
+    max-width: 85%;
     width: 500px;
     margin: 20px;
 }
@@ -38,10 +40,12 @@ h1 {
 }
 
 .nav-button {
+    justify-content: center;
     background-color: #efdbcd; /* saddle brown */
     color: rgb(104, 83, 83);
     border: 1px solid #333;
     padding: 12px 24px;
+    margin-top: 20px;
     border-radius: 8px;
     font-size: 1.2em;
     cursor: pointer;
@@ -59,15 +63,16 @@ h1 {
 
 .image-button {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     position: relative;
 
     /* removes default button styles */
     background: none;
     border: none;
-    padding: 0;
+    padding: 10px;
     font: inherit;
     cursor: pointer;
     outline: inherit;
@@ -78,13 +83,13 @@ h1 {
 
 /* styling the image inside the button */
 .image-button img {
-    width: 130px; /* set desired width */
-    height: 130px; /* set desired height */
+    width: 80px; /* set desired width */
+    height: 80px; /* set desired height */
 }
 
 .image-label {
     margin-top: 10px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
     color: #333;
 }
@@ -96,4 +101,57 @@ h1 {
 
 .image-button:active {
     transform: translateY(-2px);
+}
+
+button {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    font-family: monospace;
+}
+
+/* style for orders.html */
+
+.orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px; /* adjusts horizontal spacing btwn images */
+    row-gap: 100px; /* adjusts vertical spacing between the images */
+    padding: 10px;
+}
+
+.display-container {
+    position: relative;
+    width: 250px; /* adjusts to the width of image */
+    margin: 0 auto; /* centers the container */
+    overflow-wrap: break-word; /* wraps word */
+    
+}
+
+.display-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1; /* used to overlay images to correct position */
+}
+
+.order-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 10px;
+    top: 67px;   /* top margin of text */
+    left: 5px;
+    float: left;
+    margin-right: 35px;
+    color: #000; /* Set text color */
+    font-family: monospace; /* sets digital font */
+}
+
+.back-link {
+    display: block; /* link becomes block element */
+    margin-top: 60px; /* gives space */
+    text-align: center; /* centers link text */
 }

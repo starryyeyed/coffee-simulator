@@ -13,15 +13,22 @@
             <div class="image-button">
                 <button type="submit" class="image-button" name="bean_blend" value="Arabica">
                     <img src="{{ url_for('static', filename='arabica.png') }}" alt="Arabica">
+                    <span class="image-label">Arabica</span>
             </button>
             <button type="submit" class="image-button" name="bean_blend" value="Robusta">
                 <img src="{{ url_for('static', filename='robusta.png') }}" alt="Robusta">
+                <span class="image-label">Robusta</span>
             </button>
             <button type="submit" class="image-button" name="bean_blend" value="Liberica">
                 <img src="{{ url_for('static', filename='liberica.png') }}" alt="Liberica">
+                <span class="image-label">Liberica</span>
             </button>
         </div>
     </form>
-    <a href="/">Back to Main Menu</a>
 </body>
+    <div class="nav-button">  
+        <form action="/" method="GET">
+            <button type="submit">Back to Main Menu</button>
+        </form>
+    </div>
 </html>

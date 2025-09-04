@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previous Orders</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='orders.css')}}"> <!-- Flask-specific way to create a URL for a file in static folder-->  
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> <!-- Flask-specific way to create a URL for a file in static folder-->  
 </head>
 <body>
+    <div class="game-container">
     <h1>Previous Orders</h1>
-
     {% if orders %}
     <div class="orders-container">
         {% for order in orders %}
@@ -28,6 +28,11 @@
         <p>No orders have been placed yet.</p>
     {% endif %}
 
-    <a href="/" class="back-link">Go Back to Cafe!</a> <!-- added anchor tag back-link for css -->
+    <div class="nav-button">
+        <form action="/" method="GET">
+            <button type="submit">Go Back to Cafe!</button>
+        </form>
+    </div>
+    </div>
 </body>
 </html>
