@@ -3,6 +3,16 @@ import sqlite3
 
 app = Flask(__name__)
 
+
+@app.route('/clear_orders')
+def clear_orders():
+    conn = get_db_connection()
+    conn.execute('DELETE FROM orders')
+    conn.commit()
+    conn.close()
+    return redirect(url_for('show_orders'))
+
+  
 def get_db_connection():
     conn = sqlite3.connect('cafe.db')
     conn.row_factory = sqlite3.Row

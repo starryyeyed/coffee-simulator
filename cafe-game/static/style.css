@@ -155,3 +155,69 @@ button {
     margin-top: 60px; /* gives space */
     text-align: center; /* centers link text */
 }
+
+.receipt-container {
+display: flex;
+flex-direction: column;
+gap: 30px;
+width: 100%;
+align-items: center;
+}
+
+.order-receipt {
+background-color: #fdfcf9;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 350px;
+text-align: left;
+font-family: 'Courier New', Courier, monospace;
+}
+
+.receipt-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px dashed #4c4a47;
+padding-bottom: 10px;
+margin-bottom: 15px;
+}
+
+.receipt-header h2 {
+font-size: 1.5rem;
+margin: 0;
+}
+
+.receipt-header .fas {
+font-size: 1.8rem;
+color: #8c7851;
+}
+
+.receipt-details p {
+margin: 5px 0;
+}
+
+.receipt-message {
+margin-top: 20px;
+padding-top: 15px;
+border-top: 1px dashed #4c4a47;
+}
+
+.receipt-message h3 {
+margin: 0 0 10px;
+font-size: 1rem;
+text-transform: uppercase;
+}
+
+.dashed-line {
+border-top: 1px dashed #4c4a47;
+margin: 20px 0;
+}
+
+.no-orders {
+text-align: center;
+font-style: italic;
+color: #999;
+margin-top: 50px;
+}
