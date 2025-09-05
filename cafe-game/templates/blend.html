@@ -3,30 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select a Roast</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='game_styles.css') }}">
+    <title>Select a Blend</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="game-container">
-        <h1>Select a Roast for your {{ bean_blend }} blend</h1>
-        <p>Your order so far: {{ bean_blend }}</p>
-
-        <form action="/select_temperature" method="POST" class="form-container">
-            <!-- Hidden input to pass along the bean blend choice -->
-            <input type="hidden" name="bean_blend" value="{{ bean_blend }}">
-
+        <h1>Select Your Coffee Blend</h1>
+        <p>Your order so far: None</p>
+        <form action="/select_roast" method="POST" class="form-container">
             <div class="button-container">
-                <button type="submit" class="image-button" name="roast_type" value="Light">
-                    <img src="{{ url_for('static', filename='light_roast.png') }}" alt="Light Roast">
-                    <div class="image-label">Light</div>
+                <button type="submit" class="image-button" name="bean_blend" value="Arabica">
+                    <img src="{{ url_for('static', filename='arabica.png') }}" alt="Arabica Beans">
+                    <div class="image-label">Arabica</div>
                 </button>
-                <button type="submit" class="image-button" name="roast_type" value="Medium">
-                    <img src="{{ url_for('static', filename='medium_roast.png') }}" alt="Medium Roast">
-                    <div class="image-label">Medium</div>
+                <button type="submit" class="image-button" name="bean_blend" value="Robusta">
+                    <img src="{{ url_for('static', filename='robusta.png') }}" alt="Robusta Beans">
+                    <div class="image-label">Robusta</div>
                 </button>
-                <button type="submit" class="image-button" name="roast_type" value="Dark">
-                    <img src="{{ url_for('static', filename='dark_roast.png') }}" alt="Dark Roast">
-                    <div class="image-label">Dark</div>
+                <button type="submit" class="image-button" name="bean_blend" value="Liberica">
+                    <img src="{{ url_for('static', filename='liberica.png') }}" alt="Liberica Beans">
+                    <div class="image-label">Liberica</div>
                 </button>
             </div>
         </form>

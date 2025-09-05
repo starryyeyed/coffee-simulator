@@ -42,7 +42,7 @@ def message():
     bean_blend = request.form['bean_blend']
     roast_type = request.form['roast_type']
     temperature = request.form['temperature']
-    return render_template('message_prompt.html', bean_blend=bean_blend, roast_type=roast_type, temperature=temperature)
+    return render_template('message.html', bean_blend=bean_blend, roast_type=roast_type, temperature=temperature)
 
 @app.route('/complete_order', methods=['POST'])
 def complete_order():
@@ -61,8 +61,8 @@ def complete_order():
     # Insert the final order into the database
     conn = get_db_connection()
     conn.execute(
-        'INSERT INTO orders (item_name, price, message, sender_name, recipient) VALUES (?, ?, ?, ?, ?)',
-        (drink_name, 5.00, message, sender_name, recipient)
+        'INSERT INTO orders (item_name, sender_name, recipient_name, message) VALUES (?, ?, ?, ?)',
+        (drink_name, sender_name, recipient, message)
     )
     conn.commit()
     conn.close()
@@ -77,6 +77,19 @@ def complete_order():
 
     return render_template('summary.html', order_summary=order_summary)
 
-
 if __name__ == '__main__':
+    # Initialize the database table when the app starts
+    conn = get_db_connection()
+    conn.execute('''
+        CREATE TABLE IF NOT EXISTS orders (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            item_name TEXT NOT NULL,
+            sender_name TEXT NOT NULL,
+            recipient_name TEXT NOT NULL,
+            message TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+    conn.close()
+    
     app.run(debug=True)

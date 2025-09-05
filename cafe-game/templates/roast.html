@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select a Blend!</title>
+    <title>Select a Roast</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="game-container">
-        <h1>Select a Coffee Roast</h1>
-        <form action="/select_temperature" method="POST">
-            <div class="image-button">
+        <h1>Select a Roast for your {{ bean_blend }} blend</h1>
+        <p>Your order so far: {{ bean_blend }}</p>
+
+        <form action="/select_temperature" method="POST" class="form-container">
+            <!-- Hidden input to pass along the bean blend choice -->
+            <input type="hidden" name="bean_blend" value="{{ bean_blend }}">
+
+            <div class="button-container">
                 <button type="submit" class="image-button" name="roast_type" value="Light">
                     <img src="{{ url_for('static', filename='light_roast.png') }}" alt="Light Roast">
-                    <span class="image-label">Light Roast</span>
+                    <div class="image-label">Light</div>
                 </button>
                 <button type="submit" class="image-button" name="roast_type" value="Medium">
                     <img src="{{ url_for('static', filename='medium_roast.png') }}" alt="Medium Roast">
-                    <span class="image-label">Medium Roast</span>
+                    <div class="image-label">Medium</div>
                 </button>
                 <button type="submit" class="image-button" name="roast_type" value="Dark">
                     <img src="{{ url_for('static', filename='dark_roast.png') }}" alt="Dark Roast">
-                    <span class="image-label">Dark Roast</span>
+                    <div class="image-label">Dark</div>
                 </button>
-                </div>
-            </form>
-        </div>
-        <div class="nav-button">
-            <form action="/" method="GET">
-            <button type="submit">Back to Main Menu</button>
+            </div>
         </form>
-        </div>
     </div>
 </body>
 </html>

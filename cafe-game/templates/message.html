@@ -9,7 +9,7 @@
 <body>
     <div class="game-container">
         <h1>Add a Custom Message</h1>
-        <p>Your order so far: {{ temperature }} {{ roast_type }} {{ bean_blend }}</p>
+        <p>Your order so far: {{ temperature }} {{ roast_type }} Roast {{ bean_blend }}</p>
 
         <form action="/complete_order" method="POST" class="form-container">
             <!-- Hidden inputs to pass along previous choices -->
