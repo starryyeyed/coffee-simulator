@@ -37,38 +37,46 @@ def select_temperature():
     roast_type = request.form.get('roast_type')
     return render_template('temperature.html', bean_blend=bean_blend, roast_type=roast_type)
 
-@app.route('/select_add_ons', methods=['POST'])
-def select_milk():
-    bean_blend = request.form.get('bean_blend')
-    roast_type = request.form.get('roast_type')
-    temperature_type = request.form.get('temperature_type')
-    return render_template('add_ons.html', bean_blend=bean_blend, roast_type=roast_type, temperature_type=temperature_type)
+@app.route('/message', methods=['POST'])
+def message():
+    bean_blend = request.form['bean_blend']
+    roast_type = request.form['roast_type']
+    temperature = request.form['temperature']
+    return render_template('message_prompt.html', bean_blend=bean_blend, roast_type=roast_type, temperature=temperature)
 
-@app.route('/final_prompt', methods=['POST'])
-def final_prompt():
-    bean_blend = request.form.get('bean_blend')
-    roast_type = request.form.get('roast_type')
-    temperature_type = request.form.get('temperature_type')
-    add_ons = request.form.getlist('add_ons')
+@app.route('/complete_order', methods=['POST'])
+def complete_order():
+    # Retrieve all the selections from the form
+    bean_blend = request.form['bean_blend']
+    roast_type = request.form['roast_type']
+    temperature = request.form['temperature']
     
-    drink_name=f"{temperature_type} {roast_type} {bean_blend} {add_ons}"
-
-    return render_template('message_prompt.html', drink_name=drink_name)
-
-# adding order to a database
-@app.route('/place-order', methods=['POST'])
-def place_order():
-    item_name = request.form['item_name']
     sender_name = request.form['sender_name']
-    recipient = request.form['recipient_name']
+    recipient = request.form['recipient']
     message = request.form['message']
 
+    # Generate a custom drink name based on the choices
+    drink_name = f"{temperature} {roast_type} {bean_blend}"
+
+    # Insert the final order into the database
     conn = get_db_connection()
-    conn.execute('INSERT INTO orders (item_name, sender_name, recipient_name, message) VALUES (?, ?, ?, ?)',
-                (item_name, sender_name, recipient, message))
+    conn.execute(
+        'INSERT INTO orders (item_name, price, message, sender_name, recipient) VALUES (?, ?, ?, ?, ?)',
+        (drink_name, 5.00, message, sender_name, recipient)
+    )
     conn.commit()
     conn.close()
-    return redirect(url_for('orders'))
+
+    # Create a summary dictionary to display on the summary page
+    order_summary = {
+        'drink_name': drink_name,
+        'message': message,
+        'sender_name': sender_name,
+        'recipient': recipient
+    }
+
+    return render_template('summary.html', order_summary=order_summary)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
