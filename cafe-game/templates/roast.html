@@ -9,8 +9,6 @@
 <body>
     <div class="game-container">
         <h1>Select a Roast for your {{ bean_blend }} blend</h1>
-        <p>Your order so far: {{ bean_blend }}</p>
-
         <form action="/select_temperature" method="POST" class="form-container">
             <!-- Hidden input to pass along the bean blend choice -->
             <input type="hidden" name="bean_blend" value="{{ bean_blend }}">
