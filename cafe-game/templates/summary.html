@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='game_styles.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your order. Here is a summary of your coffee:</p>
+        <div class="summary-details">
+            <p><strong>Drink:</strong> {{ order_summary.drink_name }}</p>
+            <p><strong>Message:</strong> "{{ order_summary.message }}"</p>
+            <p><strong>From:</strong> {{ order_summary.sender_name }}</p>
+            <p><strong>To:</strong> {{ order_summary.recipient }}</p>
+        </div>
+        <a href="{{ url_for('orders') }}" class="nav-button">View All Orders</a>
+        <a href="{{ url_for('index') }}" class="nav-button">Start a New Order</a>
+    </div>
+</body>
+</html>

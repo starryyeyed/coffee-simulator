@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select a Blend!</title>
+    <title>Select Temperature</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="game-container">
-        <h1>Select Temperature</h1>
-        <form action="/select_add_ons" method="POST">
-            <div class="image-button">
+        <h1>Select a Temperature</h1>
+
+        <form action="/message" method="POST" class="form-container">
+            <!-- Hidden inputs to pass along previous choices -->
+            <input type="hidden" name="bean_blend" value="{{ bean_blend }}">
+            <input type="hidden" name="roast_type" value="{{ roast_type }}">
+
+            <div class="button-container">
                 <button type="submit" class="image-button" name="temperature" value="Hot">
-                    <img src="{{ url_for('static', filename='hot.png') }}" alt="Hot">
-                    <span class="image-label">Hot</span>
-            </button>
-            <button type="submit" class="image-button" name="temperature" value="Iced">
-                <img src="{{ url_for('static', filename='iced.png') }}" alt="Iced">
-                <span class="image-label">Iced</span>
-            </button>
-        </div>
-    </form>
-</body>
-    <div class="nav-button">  
-        <form action="/" method="GET">
-            <button type="submit">Back to Main Menu</button>
+                    <img src="{{ url_for('static', filename='hot.png') }}" alt="Hot Coffee">
+                    <div class="image-label">Hot</div>
+                </button>
+                <button type="submit" class="image-button" name="temperature" value="Iced">
+                    <img src="{{ url_for('static', filename='iced.png') }}" alt="Iced Coffee">
+                    <div class="image-label">Iced</div>
+                </button>
+            </div>
         </form>
     </div>
+</body>
 </html>
